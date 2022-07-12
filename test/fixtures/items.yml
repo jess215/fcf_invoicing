@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice_id: one
+  name: MyString
+  price: 1.5
+  qty: 1
+  description: MyText
+  service_date: 2022-07-12 15:30:32
+  category: MyString
+
+two:
+  invoice_id: two
+  name: MyString
+  price: 1.5
+  qty: 1
+  description: MyText
+  service_date: 2022-07-12 15:30:32
+  category: MyString
