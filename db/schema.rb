@@ -20,9 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_213032) do
     t.string "email"
     t.string "company"
     t.string "customer_cat"
-    t.integer "phone"
-    t.integer "mobile"
-    t.integer "fax"
+    t.string "phone"
+    t.string "mobile"
+    t.string "fax"
     t.string "website"
     t.text "street"
     t.string "city"
@@ -37,7 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_213032) do
     t.bigint "customer_id", null: false
     t.integer "terms"
     t.datetime "invoice_date"
-    t.datetime "due_date"
     t.text "summary"
     t.float "tax"
     t.datetime "created_at", null: false
