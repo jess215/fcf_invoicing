@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :customers do
+    end
     resources :invoices do
-      resources :Items
+      resources :items
     end
   end
 
