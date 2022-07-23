@@ -10,16 +10,6 @@ class Api::InvoicesController < ApplicationController
     def show
         render json: @invoice
     end
-    
-    # def create
-    #     invoice = Invoice.new(invoice_params)
-
-    #     if(invoice.save)
-    #         render json: invoice
-    #     else
-    #         render json: {error:invoice.errors.full_messages}, status 422
-    #     end
-    # end
 
     def create
         invoice = Invoice.new(invoice_params)
@@ -29,13 +19,15 @@ class Api::InvoicesController < ApplicationController
         else
           render json: invoice.errors, status: 422
         end
-      end
+    end
+
+    
 
     # def update
     #     if(@invoice.update(invoice_params))
     #         render json: @invoice
     #     else
-    #         render json: {error:@invoice.errors.full_messages}, status 422
+    #         render json: invoice.errors status 422
     #     end
     # end
 
