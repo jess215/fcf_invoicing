@@ -1,10 +1,15 @@
-import logo from './logo.svg'
+import { Link, Routes, Route, Outlet } from 'react-router-dom'
 import './App.css'
+import Home from './Pages/Home'
+import Navbar from './Components/Navbar'
 
 function App() {
   return (
-    <div className="App">
-      <header>FCF Invoice App</header>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+      </Routes>
     </div>
   )
 }
