@@ -52,6 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_213032) do
     t.text "description"
     t.datetime "service_date"
     t.string "category"
+    t.string "floranext"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["invoice_id"], name: "index_items_on_invoice_id"

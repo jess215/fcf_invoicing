@@ -16,8 +16,8 @@ This app was developed for Fillmore Country Floral as an initial tool to help cr
 - Invoice date will be pre-populated
 - Summary, optional, but can list a description of event
 - Tax, will be set to default sales tax
-- Type, will need to include if it's fresh floral arrangement, plant, gift shop item, or other
-- If floral arrangement is selected, will need to include FloraNext order number
+- Category of item will need to include if it's fresh floral arrangement, plant, gift shop item, or other
+- If a floral arrangement is selected, will need to include FloraNext order number
 - May or may not include Clover order, we may add it into Clover once payment is received, will be based on which workflow makes the most sense for designers
 
 ## Ability to track a payment on an invoice

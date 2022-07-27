@@ -8,6 +8,7 @@ class CreateItems < ActiveRecord::Migration[7.0]
       t.text :description
       t.datetime :service_date
       t.string :category
+      t.string :floranext
 
       t.timestamps
     end
