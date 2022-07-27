@@ -1,24 +1,9 @@
-# README
+# Fillmore Country Floral Invoice App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### This app was developed for Fillmore Country Floral as an initial tool to help create and track invoices easily. This app will eventually be refactored as part of a larger application for Fillmore Country Floral that will help manage every aspect of the day to day business. That larger scale application can be found on the [FCF Tracking Management GitHub page](https://github.com/jess215/fcf_tracking_management).
 
-Things you may want to cover:
+## View of all open invoices
 
-* Ruby version
+## Ability to create new invoice
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Ability to track a payment on an invoice
