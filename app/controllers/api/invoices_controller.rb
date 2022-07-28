@@ -36,6 +36,14 @@ class Api::InvoicesController < ApplicationController
       render json: Invoice.open
     end
 
+    def closed
+      render json: Invoice.closed
+    end
+
+    def all
+      render json: Invoice.all
+    end
+
     private
 
     # def set_customer
