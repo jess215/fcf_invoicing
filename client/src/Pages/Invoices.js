@@ -8,8 +8,14 @@ const Invoices = () => {
   return (
     <div className="container">
       <h1>Invoices</h1>
-      <OpenInvoices />
-      <ClosedInvoices />
+      <div className="list-box">
+        <div>
+          <button className="tab-button">Open Invoices</button>
+          <button className="tab-button">Closed Invoices</button>
+        </div>
+        <OpenInvoices />
+        <ClosedInvoices />
+      </div>
     </div>
   )
 }
