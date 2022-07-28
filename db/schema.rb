@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_27_214741) do
     t.bigint "customer_id", null: false
     t.integer "terms"
     t.datetime "invoice_date"
+    t.boolean "paid", null: false
     t.text "summary"
     t.float "tax"
     t.datetime "created_at", null: false

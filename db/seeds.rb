@@ -32,6 +32,7 @@ end
         invoice_date: Faker::Date.backward(days: 30),
         summary: Faker::Lorem.paragraph(sentence_count: 3),
         tax: 6.35,
+        paid: Faker::Boolean.boolean(true_ratio: 0.2),
     )
 end
 
