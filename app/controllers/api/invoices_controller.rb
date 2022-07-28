@@ -32,6 +32,10 @@ class Api::InvoicesController < ApplicationController
         render json: @invoice.destroy
     end
 
+    def open
+      render json: Invoice.open
+    end
+
     private
 
     # def set_customer

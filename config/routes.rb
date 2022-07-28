@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       resources :items
       resources :payments
     end
+
+    ### OPEN INVOICES ###
+    get '/open', to:'invoices#open'
+
   end
 
 
