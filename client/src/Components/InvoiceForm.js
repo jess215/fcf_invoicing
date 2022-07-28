@@ -9,6 +9,9 @@ const InvoiceForm = () => {
   return (
     <div className="container">
       <h1>New Invoice</h1>
+      <form>
+        <button>Submit</button>
+      </form>
     </div>
   )
 }
