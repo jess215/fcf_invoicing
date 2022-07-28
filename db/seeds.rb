@@ -47,6 +47,15 @@ end
     )
 end
 
+5.times do
+    pmt = Payment.create(
+        invoice_id: Faker::Number.between(from: 1, to: 15),
+        date: Faker::Date.in_date_period,
+        amount: Faker::Commerce.price,
+    )
+end
+
 puts "Customers: #{Customer.all.length}"
 puts "Invoices: #{Invoice.all.length}"
 puts "Items: #{Item.all.length}"
+puts "Payments: #{Payment.all.length}"

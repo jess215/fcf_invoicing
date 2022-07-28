@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
     resources :invoices do
       resources :items
+      resources :payments
     end
   end
 
