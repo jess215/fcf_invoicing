@@ -1,3 +1,12 @@
+
+:root {
+  --dark-blue: rgb(34, 34, 59);
+  --medium-blue: rgb(74, 78, 105);
+  --dusk-purple: rgb(154, 140, 152);
+  --dark-tan: rgb(201, 173, 167);
+  --light-tan: rgb(242, 233, 228);
+}
+
 .App {
   text-align: center;
 }
@@ -38,12 +47,12 @@
 }
 
 nav {
-  background-color: #282c34;
+  background-color: var(--medium-blue);
   display: flex;
 }
 
 .navlink {
-  color: aqua;
+  color: var(--light-tan);
   padding: 1.5rem;
   text-decoration: none;
 }
