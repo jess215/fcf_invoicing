@@ -139,6 +139,9 @@ export const DataProvider = (props) => {
         addItem,
         updateItem,
         deleteItem,
+        addPayment,
+        updatePayment,
+        deletePayment,
       }}
     >
       {props.children}
