@@ -17,8 +17,6 @@ export const DataProvider = (props) => {
     getCustomers()
   }, [])
 
-  //// BEFORE I SET UP THE CUSTOMERS I'M PROBABLY GOING TO HAVE TO SWITCH UP MY BACKEND AGAIN, SINCE THE INVOICES ARE GOING TO BELONG TO CUSTOMERS, I WILL HAVE TO CHANGE THE API CALLS /api/customers/${customer.id}/invoices/${invoice.id}/items/${items.id}, WILL NEED SOME MORE CUSTOM ROUTES POSSIBLY
-
   const getInvoices = async () => {
     try {
       let res = await axios.get('/api/invoices')
