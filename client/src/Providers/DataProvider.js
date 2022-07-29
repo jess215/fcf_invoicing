@@ -92,6 +92,42 @@ export const DataProvider = (props) => {
 
   //// PAYMENTS ////
 
+  const addPayment = async (invoiceId, payment) => {
+    try {
+      let res = await axios.post(`/api/invoices/${invoiceId}/payments`, payment)
+      setPayments([res.data, ...payments])
+    } catch (err) {
+      alert('Error in addPayment in Data Provider')
+    }
+  }
+
+  const updatePayment = async (invoiceId, payment) => {
+    try {
+      let res = await axios.put(
+        `/api/invoices/${invoiceId}/payments/${payment.id}`,
+        payment
+      )
+      let updatePayments = items.map((pmt) =>
+        pmt.id === res.data.id ? res.data : pmt
+      )
+      setPayments(updatePayments)
+    } catch (err) {
+      alert('Error in updatePayment in Data Provider')
+    }
+  }
+
+  const deletePayment = async (invoiceId, paymentId) => {
+    try {
+      let res = await axios.delete(
+        `/api/invoices/${invoiceId}/payments/${paymentId}`
+      )
+      let updatePayments = items.filter((pmt) => pmt.id !== res.data.id)
+      setPayments(updatePayments)
+    } catch (err) {
+      alert('Error in deletePayment in Data Provider')
+    }
+  }
+
   //// CUSTOMERS ////
 
   return (
