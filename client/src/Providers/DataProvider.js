@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { getToPathname } from 'react-router/lib/router'
 
 export const DataContext = React.createContext()
 
@@ -13,9 +14,6 @@ export const DataProvider = (props) => {
 
   useEffect(() => {
     getInvoices()
-  }, [])
-
-  useEffect(() => {
     getCustomers()
   }, [])
 
@@ -23,7 +21,7 @@ export const DataProvider = (props) => {
 
   const getInvoices = async () => {
     try {
-      let res = await axios.get(`/api/invoices`)
+      let res = await axios.get('/api/invoices')
       setInvoices(res.data)
     } catch (err) {
       alert('Error in getInvoices in Data Provider')
@@ -142,9 +140,50 @@ export const DataProvider = (props) => {
 
   //// CUSTOMERS ////
 
+  const getCustomers = async () => {
+    try {
+      let res = await axios.get('/api/customers')
+      setCustomers(res.data)
+    } catch (err) {
+      alert('Error in getCustomers in Data Provider')
+    }
+  }
+
+  const addCustomer = async (customer) => {
+    try {
+      let res = await axios.post('/api/customers', customer)
+      setCustomers([res.data, ...customers])
+    } catch (err) {
+      alert('Error in addCustomer in Data Provider')
+    }
+  }
+
+  const updateCustomer = async (customer) => {
+    try {
+      let res = await axios.put(`/api/customers/${id}`, customer)
+      let updateCustomers = customers.map((cus) =>
+        cus.id === res.data.id ? res.data : cus
+      )
+      setCustomers(updateCustomers)
+    } catch (err) {
+      alert('Error in updateCustomer in Data Provider')
+    }
+  }
+
+  const deleteCustomer = async (customer) => {
+    try {
+      await axios.delete(`/api/customers/${id}`)
+      setCustomers(customers.filter((cus) => cus.id !== id))
+    } catch (err) {
+      alert('Error in deleteCustomer in Data Provider')
+    }
+  }
+
   return (
     <DataContext.Provider
       value={{
+        getInvoices,
+        getCustomers,
         addInvoice,
         updateInvoice,
         deleteInvoice,
@@ -154,6 +193,9 @@ export const DataProvider = (props) => {
         addPayment,
         updatePayment,
         deletePayment,
+        addCustomer,
+        updateCustomer,
+        deleteCustomer,
       }}
     >
       {props.children}
