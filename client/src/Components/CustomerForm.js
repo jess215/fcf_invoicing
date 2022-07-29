@@ -105,20 +105,37 @@ const CustomerForm = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <h1>{props.id ? 'Edit' : 'New'}</h1>
-      <p>First Name</p>
-      <input
-        value={first_name}
-        onChange={(e) => {
-          setFirstName(e.target.value)
-        }}
-      />
-      <p>Last Name</p>
-      <input
-        value={last_name}
-        onChange={(e) => {
-          setLastName(e.target.value)
-        }}
-      />
+
+      <label>
+        First Name:
+        <input
+          value={first_name}
+          onChange={(e) => {
+            setFirstName(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Last Name:
+        <input
+          value={last_name}
+          onChange={(e) => {
+            setLastName(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Email:
+        <input
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value)
+          }}
+        />
+      </label>
+
       <br />
       <button>{props.id ? 'update' : 'save'}</button>
     </form>
