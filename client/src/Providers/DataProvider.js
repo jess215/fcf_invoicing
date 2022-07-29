@@ -23,25 +23,31 @@ export const DataProvider = (props) => {
 
   const getInvoices = async () => {
     try {
-      let res = await axios.get('/api/invoices')
+      let res = await axios.get(`/api/invoices`)
       setInvoices(res.data)
     } catch (err) {
       alert('Error in getInvoices in Data Provider')
     }
   }
 
-  const addInvoice = async (invoice) => {
+  const addInvoice = async (customerId, invoice) => {
     try {
-      let res = await axios.post('/api/invoices', invoice)
+      let res = await axios.post(
+        `/api/customers/${customerId}/invoices`,
+        invoice
+      )
       setInvoices([res.data, ...invoices])
     } catch (err) {
       alert('Error in addInvoice in Data Provider')
     }
   }
 
-  const updateInvoice = async (invoice) => {
+  const updateInvoice = async (customerId, invoice) => {
     try {
-      let res = await axios.put(`/api/invoices/${id}`, invoice)
+      let res = await axios.put(
+        `/api/customers/${customerId}/invoices/${invoice.id}`,
+        invoice
+      )
       let updateInvoices = invoices.map((inv) =>
         inv.id === res.data.id ? res.data : inv
       )
@@ -51,9 +57,9 @@ export const DataProvider = (props) => {
     }
   }
 
-  const deleteInvoice = async (id) => {
+  const deleteInvoice = async (customerId, invoiceId) => {
     try {
-      await axios.delete(`/api/invoices/${id}`)
+      await axios.delete(`/api/customers/${customerId}/invoices/${invoiceId}`)
       setInvoices(invoices.filter((inv) => inv.id !== id))
     } catch (err) {
       alert('Error in deleteInvoice in Data Provider')
