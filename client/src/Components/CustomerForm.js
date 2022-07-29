@@ -1,17 +1,20 @@
 import React, { useContext, useState } from 'react'
 import axios from 'axios'
+import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { DataContext } from '../Providers/DataProvider'
 
 const CustomerForm = (props) => {
   // const { addCustomer, updateCustomer } = useContext(DataContext)
-  const [firstName, setFirstName] = useState(
-    props.firstName ? props.firstName : ''
+  const [first_name, setFirstName] = useState(
+    props.first_name ? props.first_name : ''
   )
-  const [lastName, setLastName] = useState(props.lastName ? props.lastName : '')
+  const [last_name, setLastName] = useState(
+    props.last_name ? props.last_name : ''
+  )
   const [email, setEmail] = useState(props.email ? props.email : '')
   const [company, setCompany] = useState(props.company ? props.company : '')
-  const [customerCat, setCustomerCat] = useState(
-    props.customerCat ? props.customerCat : ''
+  const [customer_cat, setCustomerCat] = useState(
+    props.customer_cat ? props.customer_cat : ''
   )
   const [phone, setPhone] = useState(props.phone ? props.phone : '')
   const [mobile, setMobile] = useState(props.mobile ? props.mobile : '')
@@ -23,14 +26,14 @@ const CustomerForm = (props) => {
   const [zip, setZip] = useState(props.zip ? props.zip : '')
   const [country, setCountry] = useState(props.country ? props.country : '')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     console.log({
-      firstName,
-      lastName,
+      first_name,
+      last_name,
       email,
       company,
-      customerCat,
+      customer_cat,
       phone,
       mobile,
       fax,
@@ -41,15 +44,47 @@ const CustomerForm = (props) => {
       zip,
       country,
     })
+
     if (props.id) {
-      props.updateCustomer({ id: props.id, firstName, lastName })
+      props.updateCustomer({
+        id: props.id,
+        first_name,
+        last_name,
+        email,
+        company,
+        customer_cat,
+        phone,
+        mobile,
+        fax,
+        website,
+        street,
+        city,
+        state,
+        zip,
+        country,
+      })
       console.log('update here:')
       if (props.setShowEditForm) {
         props.setShowEditForm(false)
       }
     } else {
-      props.addCustomer({ firstName, lastName })
-      console.log('create here:', { firstName, lastName })
+      props.addCustomer({
+        first_name,
+        last_name,
+        email,
+        company,
+        customer_cat,
+        phone,
+        mobile,
+        fax,
+        website,
+        street,
+        city,
+        state,
+        zip,
+        country,
+      })
+      console.log('create here:', { first_name, last_name })
     }
     setFirstName('')
     setLastName('')
@@ -60,14 +95,14 @@ const CustomerForm = (props) => {
       <h1>{props.id ? 'Edit' : 'New'}</h1>
       <p>First Name</p>
       <input
-        value={firstName}
+        value={first_name}
         onChange={(e) => {
           setFirstName(e.target.value)
         }}
       />
       <p>Last Name</p>
       <input
-        value={lastName}
+        value={last_name}
         onChange={(e) => {
           setLastName(e.target.value)
         }}
