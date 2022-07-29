@@ -88,6 +88,18 @@ const CustomerForm = (props) => {
     }
     setFirstName('')
     setLastName('')
+    setEmail('')
+    setCompany('')
+    setCustomerCat('')
+    setPhone('')
+    setMobile('')
+    setFax('')
+    setWebsite('')
+    setStreet('')
+    setCity('')
+    setState('')
+    setZip('')
+    setCountry('')
   }
 
   return (
