@@ -42,4 +42,13 @@ export const DataProvider = (props) => {
       alert('Error in updateInvoice in Data Provider')
     }
   }
+
+  const deleteInvoice = async (id) => {
+    try {
+      await axios.delete(`/api/invoices/${id}`)
+      setInvoices(invoices.filter((inv) => inv.id !== id))
+    } catch (err) {
+      alert('Error in deleteInvoice in Data Provider')
+    }
+  }
 }
