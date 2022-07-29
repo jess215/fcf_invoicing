@@ -168,7 +168,7 @@ export const DataProvider = (props) => {
     }
   }
 
-  const deleteCustomer = async (customer) => {
+  const deleteCustomer = async (id) => {
     try {
       await axios.delete(`/api/customers/${id}`)
       setCustomers(customers.filter((cus) => cus.id !== id))
