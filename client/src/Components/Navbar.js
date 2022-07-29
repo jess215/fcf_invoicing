@@ -14,6 +14,9 @@ const Navbar = () => {
         <Link className="navlink" to="/invoices/new">
           New Invoice
         </Link>
+        <Link className="navlink" to="/customers/new">
+          New Customer
+        </Link>
       </nav>
     </div>
   )

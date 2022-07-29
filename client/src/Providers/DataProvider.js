@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { getToPathname } from 'react-router/lib/router'
 
 export const DataContext = React.createContext()
 
@@ -56,7 +55,7 @@ export const DataProvider = (props) => {
   const deleteInvoice = async (customerId, invoiceId) => {
     try {
       await axios.delete(`/api/customers/${customerId}/invoices/${invoiceId}`)
-      setInvoices(invoices.filter((inv) => inv.id !== id))
+      setInvoices(invoices.filter((inv) => inv.id !== invoiceId))
     } catch (err) {
       alert('Error in deleteInvoice in Data Provider')
     }
@@ -158,7 +157,7 @@ export const DataProvider = (props) => {
 
   const updateCustomer = async (customer) => {
     try {
-      let res = await axios.put(`/api/customers/${id}`, customer)
+      let res = await axios.put(`/api/customers/${customer.id}`, customer)
       let updateCustomers = customers.map((cus) =>
         cus.id === res.data.id ? res.data : cus
       )
