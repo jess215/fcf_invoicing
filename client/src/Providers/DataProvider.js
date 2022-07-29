@@ -80,6 +80,16 @@ export const DataProvider = (props) => {
     }
   }
 
+  const deleteItem = async (invoiceId, itemId) => {
+    try {
+      let res = await axios.delete(`/api/invoices/${invoiceId}/items/${itemId}`)
+      let updateItems = items.filter((itm) => itm.id !== res.data.id)
+      setItems(updateItems)
+    } catch (err) {
+      alert('Error in deleteItem in Data Provider')
+    }
+  }
+
   //// PAYMENTS ////
 
   //// CUSTOMERS ////
@@ -92,6 +102,7 @@ export const DataProvider = (props) => {
         deleteInvoice,
         addItem,
         updateItem,
+        deleteItem,
       }}
     >
       {props.children}
