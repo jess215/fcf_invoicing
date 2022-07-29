@@ -65,6 +65,21 @@ export const DataProvider = (props) => {
     }
   }
 
+  const updateItem = async (invoiceId, item) => {
+    try {
+      let res = await axios.put(
+        `/api/invoices/${invoiceId}/items/${item.id}`,
+        item
+      )
+      let updateItems = items.map((itm) =>
+        itm.id === res.data.id ? res.data : itm
+      )
+      setItems(updateItems)
+    } catch (err) {
+      alert('Error in updateItem in Data Provider')
+    }
+  }
+
   //// PAYMENTS ////
 
   //// CUSTOMERS ////
@@ -76,6 +91,7 @@ export const DataProvider = (props) => {
         updateInvoice,
         deleteInvoice,
         addItem,
+        updateItem,
       }}
     >
       {props.children}
