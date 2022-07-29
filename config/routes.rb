@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :customers do
-    end
-    resources :invoices do
-      resources :items
-      resources :payments
+      resources :invoices do
+        resources :items
+        resources :payments
+      end
     end
 
     ### INVOICES ###
