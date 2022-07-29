@@ -5,9 +5,11 @@ export const DataContext = React.createContext()
 
 export const DataProvider = (props) => {
   const [invoices, setInvoices] = useState([])
-  const [customers, setCustomers] = useState([])
   const [items, setItems] = useState([])
   const [payments, setPayments] = useState([])
+  const [customers, setCustomers] = useState([])
+
+  //// INVOICES ////
 
   useEffect(() => {
     getInvoices()
@@ -51,4 +53,32 @@ export const DataProvider = (props) => {
       alert('Error in deleteInvoice in Data Provider')
     }
   }
+
+  //// ITEMS ////
+
+  const addItem = async (invoiceId, item) => {
+    try {
+      let res = await axios.post(`/api/invoices/${invoiceId}/items`, item)
+      setItems([res.data, ...items])
+    } catch (err) {
+      alert('Error in addItem in Data Provider')
+    }
+  }
+
+  //// PAYMENTS ////
+
+  //// CUSTOMERS ////
+
+  return (
+    <DataContext.Provider
+      value={{
+        addInvoice,
+        updateInvoice,
+        deleteInvoice,
+        addItem,
+      }}
+    >
+      {props.children}
+    </DataContext.Provider>
+  )
 }
