@@ -136,6 +136,120 @@ const CustomerForm = (props) => {
         />
       </label>
 
+      <label>
+        Company:
+        <input
+          value={company}
+          onChange={(e) => {
+            setCompany(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Category:
+        <select
+          value={customer_cat}
+          onChange={(e) => {
+            setCustomerCat(e.target.value)
+          }}
+        >
+          <option>Test</option>
+          <option>Test 2</option>
+          <option>Test 3</option>
+        </select>
+      </label>
+
+      <label>
+        Phone:
+        <input
+          value={phone}
+          onChange={(e) => {
+            setPhone(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Mobile:
+        <input
+          value={mobile}
+          onChange={(e) => {
+            setMobile(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Fax:
+        <input
+          value={fax}
+          onChange={(e) => {
+            setFax(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Website:
+        <input
+          value={website}
+          onChange={(e) => {
+            setWebsite(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Street:
+        <input
+          value={street}
+          onChange={(e) => {
+            setStreet(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        City:
+        <input
+          value={city}
+          onChange={(e) => {
+            setCity(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        State:
+        <input
+          value={state}
+          onChange={(e) => {
+            setState(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Zip:
+        <input
+          value={zip}
+          onChange={(e) => {
+            setZip(e.target.value)
+          }}
+        />
+      </label>
+
+      <label>
+        Country:
+        <input
+          value={country}
+          onChange={(e) => {
+            setCountry(e.target.value)
+          }}
+        />
+      </label>
+
       <br />
       <button>{props.id ? 'update' : 'save'}</button>
     </form>
