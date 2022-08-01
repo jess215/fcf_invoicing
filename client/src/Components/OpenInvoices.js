@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import {
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TablePagination,
-  TableRow,
-} from '@mui/material'
-
 const OpenInvoices = () => {
   const [open, setOpen] = useState([])
 
@@ -32,36 +21,17 @@ const OpenInvoices = () => {
     }
   }
 
-  const columns = [
-    { id: 'company', label: 'Company' },
-    { id: 'name', label: 'Name' },
-    { id: 'srv_date', label: 'Service Date' },
-    { id: 'inv_date', label: 'Invoice Date' },
-    { id: 'due_date', label: 'Due Date' },
-    { id: 'total', label: 'Total' },
-    { id: 'edit', label: 'Edit' },
-  ]
-
-  // const renderOpen = () => {
-  //   return open.map((open) => <div key={`${open.id}`}></div>)
-  // }
-
   return (
-    <div key={`${open.id}`}>
-      <TableContainer sx={{ maxHeight: 400 }}>
-        <Table stickyHeader aria-label="open table">
-          <TableHead>
-            <TableRow>
-              {open.map((open) => (
-                <TableCell key={open.id}></TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-        </Table>
-      </TableContainer>
+    <div>
+      {open.map((open) => (
+        <div key={`${open.id}`}>
+          <p>{open.id}</p>
+          <p>
+            {open.first_name} {open.last_name}
+          </p>
+        </div>
+      ))}
       {/* <h2>Open Invoices</h2> */}
-      <p>{open.id}</p>
-      <p>{open.first_name}</p>
       {/* {JSON.stringify(open)} */}
     </div>
   )
