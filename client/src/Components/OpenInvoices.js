@@ -32,9 +32,19 @@ const OpenInvoices = () => {
     }
   }
 
-  const renderOpen = () => {
-    return open.map((open) => <div key={`${open.id}`}></div>)
-  }
+  const columns = [
+    { id: 'company', label: 'Company' },
+    { id: 'name', label: 'Name' },
+    { id: 'srv_date', label: 'Service Date' },
+    { id: 'inv_date', label: 'Invoice Date' },
+    { id: 'due_date', label: 'Due Date' },
+    { id: 'total', label: 'Total' },
+    { id: 'edit', label: 'Edit' },
+  ]
+
+  // const renderOpen = () => {
+  //   return open.map((open) => <div key={`${open.id}`}></div>)
+  // }
 
   return (
     <div key={`${open.id}`}>
