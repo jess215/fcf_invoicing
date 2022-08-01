@@ -51,7 +51,11 @@ const OpenInvoices = () => {
       <TableContainer sx={{ maxHeight: 400 }}>
         <Table stickyHeader aria-label="open table">
           <TableHead>
-            <TableRow></TableRow>
+            <TableRow>
+              {open.map((open) => (
+                <TableCell key={open.id}></TableCell>
+              ))}
+            </TableRow>
           </TableHead>
         </Table>
       </TableContainer>
