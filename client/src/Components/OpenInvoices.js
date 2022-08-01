@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from '@mui/material'
 
 const OpenInvoices = () => {
   const [open, setOpen] = useState([])
@@ -26,14 +36,21 @@ const OpenInvoices = () => {
     return open.map((open) => <div key={`${open.id}`}></div>)
   }
 
-  return open.map((open) => (
+  return (
     <div key={`${open.id}`}>
+      <TableContainer sx={{ maxHeight: 400 }}>
+        <Table stickyHeader aria-label="open table">
+          <TableHead>
+            <TableRow></TableRow>
+          </TableHead>
+        </Table>
+      </TableContainer>
       {/* <h2>Open Invoices</h2> */}
       <p>{open.id}</p>
       <p>{open.first_name}</p>
       {/* {JSON.stringify(open)} */}
     </div>
-  ))
+  )
 }
 
 export default OpenInvoices
