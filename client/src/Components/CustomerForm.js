@@ -4,7 +4,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { DataContext } from '../Providers/DataProvider'
 
 const CustomerForm = (props) => {
-  // const { addCustomer, updateCustomer } = useContext(DataContext)
+  // const { addCustomer, updateCustomer } = useContext(DataContexSt)
   const navigate = useNavigate()
   const location = useLocation()
   const [first_name, setFirstName] = useState(
