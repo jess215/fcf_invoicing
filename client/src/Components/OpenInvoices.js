@@ -16,17 +16,24 @@ const OpenInvoices = () => {
     try {
       let res = await axios.get('/api/open')
       setOpen(res.data)
+      // console.log('OPEN INVOICES:', res.data)
     } catch (err) {
       alert('Error in getting open invoices')
     }
   }
 
-  return (
-    <div>
-      <h2>Open Invoices</h2>
-      {JSON.stringify(open)}
+  const renderOpen = () => {
+    return open.map((open) => <div key={`${open.id}`}></div>)
+  }
+
+  return open.map((open) => (
+    <div key={`${open.id}`}>
+      {/* <h2>Open Invoices</h2> */}
+      <p>{open.id}</p>
+      <p>{open.first_name}</p>
+      {/* {JSON.stringify(open)} */}
     </div>
-  )
+  ))
 }
 
 export default OpenInvoices
