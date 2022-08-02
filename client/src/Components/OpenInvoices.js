@@ -29,6 +29,9 @@ const OpenInvoices = () => {
           <p>
             {open.first_name} {open.last_name}
           </p>
+          <p>{open.company}</p>
+          <p>{open.invoice_date}</p>
+          <p>${open.total}</p>
         </div>
       ))}
       {/* <h2>Open Invoices</h2> */}
