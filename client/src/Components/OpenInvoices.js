@@ -33,7 +33,7 @@ const OpenInvoices = () => {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="open table">
+      <Table>
         <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
