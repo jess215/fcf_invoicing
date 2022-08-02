@@ -44,6 +44,21 @@ const ClosedInvoices = () => {
             <TableCell>Total</TableCell>
           </TableRow>
         </TableHead>
+        <TableBody>
+          {closed.map((closed) => (
+            <TableRow key={closed.id}>
+              <TableCell>{closed.id}</TableCell>
+              <TableCell>
+                {closed.first_name} {closed.last_name}
+              </TableCell>
+              <TableCell>{closed.company}</TableCell>
+              <TableCell>Service Date</TableCell>
+              <TableCell>{closed.invoice_date}</TableCell>
+              <TableCell>Paid Date</TableCell>
+              <TableCell>{closed.total}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
       </Table>
     </TableContainer>
 
