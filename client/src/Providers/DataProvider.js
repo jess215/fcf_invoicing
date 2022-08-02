@@ -147,12 +147,13 @@ export const DataProvider = (props) => {
   }
 
   const addCustomer = async (customer) => {
-    try {
-      let res = await axios.post('/api/customers', customer)
-      setCustomers([res.data, ...customers])
-    } catch (err) {
-      alert('Error in addCustomer in Data Provider')
-    }
+    if (!customer.first_name || customer.first_name === '')
+      try {
+        let res = await axios.post('/api/customers', customer)
+        setCustomers([res.data, ...customers])
+      } catch (err) {
+        alert('Error in addCustomer in Data Provider')
+      }
   }
 
   const updateCustomer = async (customer) => {
@@ -199,3 +200,5 @@ export const DataProvider = (props) => {
     </DataContext.Provider>
   )
 }
+
+export default DataProvider
