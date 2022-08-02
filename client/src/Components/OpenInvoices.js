@@ -63,24 +63,6 @@ const OpenInvoices = () => {
       </Table>
     </TableContainer>
   )
-
-  // return (
-  //   <div>
-  //     {open.map((open) => (
-  //       <div key={`${open.id}`}>
-  //         <p>{open.id}</p>
-  //         <p>
-  //           {open.first_name} {open.last_name}
-  //         </p>
-  //         <p>{open.company}</p>
-  //         <p>{open.invoice_date}</p>
-  //         <p>${open.total}</p>
-  //       </div>
-  //     ))}
-  //     {/* <h2>Open Invoices</h2> */}
-  //     {/* {JSON.stringify(open)} */}
-  //   </div>
-  // )
 }
 
 export default OpenInvoices
