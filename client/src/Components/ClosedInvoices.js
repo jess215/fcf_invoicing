@@ -34,14 +34,28 @@ const ClosedInvoices = () => {
     <TableContainer component={Paper}>
       <Table>
         <TableHead>
-          <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Company</TableCell>
-            <TableCell>Service Date</TableCell>
-            <TableCell>Invoice Date</TableCell>
-            <TableCell>Paid Date</TableCell>
-            <TableCell>Total</TableCell>
+          <TableRow className="header-row">
+            <TableCell>
+              <h4>ID</h4>
+            </TableCell>
+            <TableCell>
+              <h4>Name</h4>
+            </TableCell>
+            <TableCell>
+              <h4>Company</h4>
+            </TableCell>
+            <TableCell>
+              <h4>Service Date</h4>
+            </TableCell>
+            <TableCell>
+              <h4>Invoice Date</h4>
+            </TableCell>
+            <TableCell>
+              <h4>Paid Date</h4>
+            </TableCell>
+            <TableCell>
+              <h4>Total</h4>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

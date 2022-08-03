@@ -49,6 +49,13 @@ h2 {
   font-weight: bold;
 }
 
+h4 {
+  color: var(--med-blue);
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-size: medium;
+}
+
 .list-box {
   /* background-color: var(--medium-blue); */
   display: flex;
@@ -76,4 +83,8 @@ h2 {
   background-color: var(--blue);
   border-radius: 1rem;
   margin: .3rem;
+}
+
+.header-row {
+  background-color: var(--med-gray);
 }
