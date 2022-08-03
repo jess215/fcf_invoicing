@@ -70,8 +70,7 @@ const CustomerForm = (props) => {
         props.setShowEditForm(false)
       }
     } else {
-      console.log(typeof addCustomer())
-      props.addCustomer({
+      addCustomer({
         first_name,
         last_name,
         email,
@@ -108,7 +107,7 @@ const CustomerForm = (props) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h1>{props.id ? 'Edit' : 'New'}</h1>
+        <h1>{props.id ? 'Edit' : 'New'} Customer</h1>
 
         <label>
           First Name:
