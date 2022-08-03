@@ -33,9 +33,58 @@ const InvoiceForm = (props) => {
 
   return (
     <div className="container">
-      <h1>New Invoice</h1>
-      <form>
-        <button>Submit</button>
+      <form onSubmit={handleSubmit}>
+        <h1>{props.id ? 'Edit' : 'New'} Invoice</h1>
+
+        <label>
+          Summary:
+          <input
+            value={summary}
+            onChange={(e) => {
+              setSummary(e.target.value)
+            }}
+          />
+        </label>
+
+        <label>
+          Terms:
+          <select
+            value={terms}
+            onChange={(e) => {
+              setTerms(e.target.value)
+            }}
+          >
+            <option>30</option>
+            <option>60</option>
+          </select>
+        </label>
+
+        <label>
+          Invoice Date:
+          <input
+            value={invoice_date}
+            onChange={(e) => {
+              setInvoiceDate(e.target.value)
+            }}
+          />
+        </label>
+
+        <label>
+          Paid:
+          <select
+            value={paid}
+            onChange={(e) => {
+              setPaid(e.target.value)
+            }}
+          >
+            <option>True</option>
+            <option>False</option>
+          </select>
+        </label>
+
+        <br />
+
+        <button>{props.id ? 'update' : 'save'}</button>
       </form>
     </div>
   )
