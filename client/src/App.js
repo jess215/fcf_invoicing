@@ -16,6 +16,7 @@ function App() {
         <Route path="/invoices" element={<Invoices />} />
         <Route path="/invoices/new" element={<InvoiceForm />} />
         <Route path="/customers/new" element={<CustomerForm />} />
+        <Route path="/customers/:id/edit" element={<CustomerForm />} />
         <Route path="/customers" element={<Customers />} />
       </Routes>
     </div>

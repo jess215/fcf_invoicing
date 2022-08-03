@@ -9,16 +9,10 @@ const Navbar = () => {
           Home
         </Link>
         <Link className="navlink" to="/invoices">
-          Open Invoices
+          Invoices
         </Link>
         <Link className="navlink" to="/customers">
           Customers
-        </Link>
-        <Link className="navlink" to="/invoices/new">
-          New Invoice
-        </Link>
-        <Link className="navlink" to="/customers/new">
-          New Customer
         </Link>
       </nav>
     </div>

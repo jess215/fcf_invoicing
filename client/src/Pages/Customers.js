@@ -14,11 +14,22 @@ import { DataContext } from '../Providers/DataProvider'
 
 const Customers = () => {
   const { editCustomer, deleteCustomer } = useContext(DataContext)
+  const navigate = useNavigate()
   const [customers, setCustomers] = useState([])
 
   useEffect(() => {
     getCustomers()
   }, [])
+
+  const addCusForm = () => {
+    let path = `/customers/new`
+    navigate(path)
+  }
+
+  const editCusForm = () => {
+    let path = `/customer/${customers.id}/edit`
+    navigate(path)
+  }
 
   const getCustomers = async () => {
     try {
@@ -33,7 +44,9 @@ const Customers = () => {
     <div className="container">
       <div className="page-header">
         <h1>Customers</h1>
-        <button className="new-btn">New Customer</button>
+        <button className="new-btn" onClick={addCusForm}>
+          New Customer
+        </button>
       </div>
 
       <div className="list-box">
@@ -80,7 +93,9 @@ const Customers = () => {
                   </TableCell>
                   <TableCell>
                     <div className="table-btn-container">
-                      <button className="table-btn">Edit</button>
+                      <button className="table-btn" onClick={editCusForm}>
+                        Edit
+                      </button>
                       <button
                         className="table-btn"
                         onClick={() => {
