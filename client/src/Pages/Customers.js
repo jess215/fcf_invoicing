@@ -93,6 +93,7 @@ const Customers = () => {
                   </TableCell>
                   <TableCell>
                     <div className="table-btn-container">
+                      {/* Need to figure out how to pass the customer ID to this field */}
                       <button className="table-btn" onClick={editCusForm}>
                         Edit
                       </button>
