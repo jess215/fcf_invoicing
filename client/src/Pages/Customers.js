@@ -31,7 +31,11 @@ const Customers = () => {
 
   return (
     <div className="container">
-      <h1>Customers</h1>
+      <div className="page-header">
+        <h1>Customers</h1>
+        <button className="new-btn">New Customer</button>
+      </div>
+
       <div className="list-box">
         <TableContainer component={Paper}>
           <Table>
@@ -58,6 +62,7 @@ const Customers = () => {
                 <TableCell></TableCell>
               </TableRow>
             </TableHead>
+
             <TableBody>
               {customers.map((customer) => (
                 <TableRow key={customer.id}>

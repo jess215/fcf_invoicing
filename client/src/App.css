@@ -50,7 +50,7 @@ h2 {
 }
 
 h4 {
-  color: var(--med-blue);
+  color: var(--light);
   margin-top: .1rem;
   margin-bottom: .1rem;
   font-size: medium;
@@ -80,11 +80,26 @@ h4 {
 }
 
 .table-btn {
-  background-color: var(--blue);
+  background-color: var(--med-blue);
   border-radius: 1rem;
   margin: .3rem;
 }
 
 .header-row {
   background-color: var(--med-gray);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-btn {
+  background-color: var(--med-blue);
+  color: var(--light);
+  font-weight: bold;
+  margin: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 1rem;
 }
