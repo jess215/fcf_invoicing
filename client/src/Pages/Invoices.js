@@ -7,7 +7,10 @@ import ClosedInvoices from '../Components/ClosedInvoices'
 const Invoices = () => {
   return (
     <div className="container">
-      <h1>Invoices</h1>
+      <div className="page-header">
+        <h1>Invoices</h1>
+        <button className="new-btn">New Invoice</button>
+      </div>
       <div className="list-box">
         <div>
           <button className="tab-button">Open Invoices</button>
