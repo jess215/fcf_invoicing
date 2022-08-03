@@ -5,6 +5,7 @@ import Invoices from './Pages/Invoices'
 import InvoiceForm from './Components/InvoiceForm'
 import Navbar from './Components/Navbar'
 import CustomerForm from './Components/CustomerForm'
+import Customers from './Pages/Customers'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/invoices" element={<Invoices />} />
         <Route path="/invoices/new" element={<InvoiceForm />} />
         <Route path="/customers/new" element={<CustomerForm />} />
+        <Route path="/customers" element={<Customers />} />
       </Routes>
     </div>
   )
