@@ -61,7 +61,14 @@ const Customers = () => {
               <TableCell>
                 <div className="table-btn-container">
                   <button className="table-btn">Edit</button>
-                  <button className="table-btn">Delete</button>
+                  <button
+                    className="table-btn"
+                    onClick={() => {
+                      deleteCustomer(customer.id)
+                    }}
+                  >
+                    Delete
+                  </button>
                 </div>
               </TableCell>
             </TableRow>
