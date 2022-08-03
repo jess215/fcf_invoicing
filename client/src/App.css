@@ -1,24 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Palanquin&display=swap');
 
 :root {
-  --dark-blue: rgb(34, 34, 59);
-  --medium-blue: rgb(74, 78, 105);
-  --dusk-purple: rgb(154, 140, 152);
-  --dark-tan: rgb(201, 173, 167);
-  --light-tan: rgb(242, 233, 228);
+
+  --blue: #29A9E0;
+  --med-blue: #11B6E4;
+  --light-blue: #9DE1FB;
+  --light: #FFFCF2;
+  --light-gray: #CCC5B9;
+  --med-gray: #413D3A;
+  --dark-gray: #2B2927;
+
 }
 
 nav {
-  background-color: var(--medium-blue);
+  background-color: var(--dark-gray);
   display: flex;
 }
 
 body {
-  background-color: var(--light-tan);
+  background-color: var(--light);
 }
 
 .navlink {
-  color: var(--light-tan);
+  color: var(--light-blue);
   font-family: 'Palanquin';
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -34,13 +38,13 @@ body {
 }
 
 h1 {
-  color: var(--dark-blue);
+  color: var(--med-gray);
   font-family: 'Palanquin';
   font-weight: bold;
 }
 
 h2 {
-  color: var(--medium-blue);
+  color: var(--med-blue);
   font-family: 'Palanquin';
   font-weight: bold;
 }
@@ -52,12 +56,12 @@ h2 {
 }
 
 .tab-button {
-  background-color: var(--medium-blue);
-  color: var(--light-tan);
+  background-color: var(--blue);
+  color: var(--dark-gray);
   font-family: 'Palanquin';
   font-weight: bold;
   font-size: 1rem;
-  outline-color: var(--light-tan);
+  outline-color: var(--light);
   border-radius: .5rem;
   padding-left: 1rem;
   padding-right: 1rem;
