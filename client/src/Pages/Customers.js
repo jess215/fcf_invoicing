@@ -40,6 +40,7 @@ const Customers = () => {
             <TableCell>Category</TableCell>
             <TableCell>Phone</TableCell>
             <TableCell>Address</TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -50,6 +51,19 @@ const Customers = () => {
               </TableCell>
               <TableCell>{customer.company}</TableCell>
               <TableCell>{customer.email}</TableCell>
+              <TableCell>{customer.customer_cat}</TableCell>
+              <TableCell>{customer.phone}</TableCell>
+              <TableCell>
+                {customer.street}
+                <br />
+                {customer.city}, {customer.state} {customer.zip}
+              </TableCell>
+              <TableCell>
+                <div className="table-btns">
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </div>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
