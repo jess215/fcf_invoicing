@@ -59,9 +59,9 @@ const Customers = () => {
                 {customer.city}, {customer.state} {customer.zip}
               </TableCell>
               <TableCell>
-                <div className="table-btns">
-                  <button>Edit</button>
-                  <button>Delete</button>
+                <div className="table-btn-container">
+                  <button className="table-btn">Edit</button>
+                  <button className="table-btn">Delete</button>
                 </div>
               </TableCell>
             </TableRow>
