@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import {
   Table,
   TableBody,
@@ -11,11 +11,14 @@ import {
   Paper,
 } from '@mui/material'
 import { DataContext } from '../Providers/DataProvider'
+import CustomerForm from '../Components/CustomerForm'
 
 const Customers = () => {
-  const { editCustomer, deleteCustomer } = useContext(DataContext)
+  const { updateCustomer, deleteCustomer } = useContext(DataContext)
   const navigate = useNavigate()
   const [customers, setCustomers] = useState([])
+  const [showForm, setShowForm] = useState(false)
+  const [showEditForm, setShowEditForm] = useState(false)
 
   useEffect(() => {
     getCustomers()
@@ -27,7 +30,7 @@ const Customers = () => {
   }
 
   const editCusForm = () => {
-    let path = `/customer/${customers.id}/edit`
+    let path = `/customers/${customers.id}/edit`
     navigate(path)
   }
 
@@ -50,6 +53,7 @@ const Customers = () => {
       </div>
 
       <div className="list-box">
+        {/* TABLE HEADERS */}
         <TableContainer component={Paper}>
           <Table>
             <TableHead>
@@ -76,6 +80,7 @@ const Customers = () => {
               </TableRow>
             </TableHead>
 
+            {/* TABLE DATA */}
             <TableBody>
               {customers.map((customer) => (
                 <TableRow key={customer.id}>
@@ -94,7 +99,12 @@ const Customers = () => {
                   <TableCell>
                     <div className="table-btn-container">
                       {/* Need to figure out how to pass the customer ID to this field */}
-                      <button className="table-btn" onClick={editCusForm}>
+                      <button
+                        className="table-btn"
+                        onClick={() => {
+                          setShowEditForm(!showEditForm)
+                        }}
+                      >
                         Edit
                       </button>
                       <button
@@ -105,6 +115,15 @@ const Customers = () => {
                       >
                         Delete
                       </button>
+                    </div>
+                    <div>
+                      {showEditForm && (
+                        <CustomerForm
+                          id={customer.id}
+                          updateCustomer={updateCustomer}
+                          setShowEditForm={setShowEditForm}
+                        />
+                      )}
                     </div>
                   </TableCell>
                 </TableRow>
